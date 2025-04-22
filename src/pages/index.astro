@@ -1,11 +1,13 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/home/Hero.astro";
+import Services from "../components/home/Services.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const title = "NJ Express Locksmith | Professional Mobile Locksmith Services in New Jersey";
+const description = "NJ Express Locksmith provides fast, reliable mobile locksmith services throughout New Jersey. Available 24/7 for emergencies. Licensed and insured professionals. Call (551) 305-7525.";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={title} description={description}>
+  <Hero />
+  <Services />
 </Layout>

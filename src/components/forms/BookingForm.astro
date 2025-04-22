@@ -1,0 +1,40 @@
+---
+// BookingForm component
+---
+
+<form class="w-full bg-white p-5 rounded-lg shadow-md" method="POST" name="booking" netlify-honeypot="bot-field" data-netlify="true">
+  <h3 class="text-xl font-bold text-brand-primary mb-4">Book Your Service</h3>
+  
+  <input type="hidden" name="form-name" value="booking" />
+  
+  <div class="space-y-4">
+    <-f Service selection -->
+    <div>
+      <label for="service" class="block text-sm font-medium text-brand-neutral-dark mb-1">Service Type <span class="text-red-600">*</span></label>
+      <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-secondary focus:border-transparent">
+        <option value="" disabled selected>Select a service</option>
+        <option value="car-lockout">Car Lockout</option>
+        <option value="house-lockout">House Lockout</option>
+        <option value="lock-replacement">Lock Replacement</option>
+        <option value="key-replacement">Key Replacement</option>
+      </select>
+    </div>
+
+    <-f Name field -->
+    <div>
+      <label for="booking-name" class="block text-sm font-medium text-brand-neutral-dark mb-1">Full Name <span class="text-red-600">*</span></label>
+      <input type="text" id="booking-name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-secondary focus:border-transparent" placeholder="Your name" />
+    </div>
+
+    <-f Phone field -->
+    <div>
+      <label for="booking-phone" class="block text-sm font-medium text-brand-neutral-dark mb-1">Phone Number <span class="text-red-600">*</span></label>
+      <input type="tel" id="booking-phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-secondary focus:border-transparent" placeholder="(123) 456-7890" />
+    </div>
+
+    <-f Submit button -->
+    <div>
+      <button type="submit" class="w-full bg-brand-accent text-brand-primary font-bold px-6 py-3 rounded-md hover:bg-yellow-400 transition-colors">Book Now</button>
+    </div>
+  </div>
+</form>
