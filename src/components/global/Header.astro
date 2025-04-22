@@ -1,0 +1,88 @@
+---
+// Define any props or imports here
+const navLinks = [
+  { href: "/services", text: "Services" },
+  { href: "/service-areas", text: "Service Areas" },
+  { href: "/faq", text: "FAQ" },
+  { href: "/reviews", text: "Reviews" },
+  { href: "/about", text: "About" },
+  { href: "/contact", text: "Contact" }
+];
+---
+
+<header class="bg-brand-primary text-white">
+  <div class="container mx-auto py-4 px-4">
+    <-f Top bar - simplified for mobile -->
+    <div class="flex justify-between items-center mb-4">
+      <-f Phone number - most important on mobile -->
+      <a href="tel:5513057525" class="text-white hover:text-brand-accent transition-colors font-semibold flex items-center">
+        <span class="text-brand-accent mr-2">��</span>
+        <span>(551) 305-7525</span>
+      </a>
+      
+      <-f License number - only shown on larger screens -->
+      <div class="hidden sm:block">
+        <p class="text-xs sm:text-sm">NJ License: <span class="text-brand-accent">13VH13592800</span></p>
+      </div>
+    </div>
+    
+    <-f Main navigation -->
+    <div class="flex flex-col sm:flex-row justify-between items-center">
+      <div class="flex w-full sm:w-auto justify-between items-center">
+        <-f Logo/Brand -->
+        <a href="/" class="text-xl sm:text-2xl font-heading font-bold text-white">
+          NJ Express Locksmith
+        </a>
+        
+        <-f Mobile menu toggle - only visible on small screens -->
+        <button 
+          id="mobile-menu-toggle" 
+          class="sm:hidden bg-brand-secondary text-white p-2 rounded-md"
+          aria-label="Toggle navigation menu"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <-f Navigation menu - hidden on mobile until toggled -->
+      <nav id="main-nav" class="hidden sm:block w-full sm:w-auto mt-4 sm:mt-0">
+        <ul class="flex flex-col sm:flex-row items-center gap-4">
+          {navLinks.map(link => (
+            <li>
+              <a 
+                href={link.href} 
+                class="block text-white hover:text-brand-accent transition-colors py-2 sm:py-0"
+              >
+                {link.text}
+              </a>
+            </li>
+          ))}
+          
+          <-f CTA Button - Full width on mobile for easy tapping -->
+          <li class="w-full sm:w-auto mt-4 sm:mt-0">
+            <a 
+              href="/book" 
+              class="inline-flex items-center justify-center bg-brand-accent text-brand-neutral-dark font-bold px-4 py-3 sm:py-2 rounded-md hover:bg-yellow-400 transition-colors w-full sm:w-auto"
+            >
+              <span class="mr-2">📅</span> Book a Service
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle functionality
+  const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+  const mainNav = document.getElementById("main-nav");
+  
+  if (mobileMenuToggle && mainNav) {
+    mobileMenuToggle.addEventListener("click", () => {
+      mainNav.classList.toggle("hidden");
+    });
+  }
+</script>

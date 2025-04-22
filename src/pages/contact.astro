@@ -1,0 +1,109 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactForm from "../components/forms/ContactForm.astro";
+
+const title = "Contact Us | NJ Express Locksmith";
+const description = "Contact NJ Express Locksmith for all your locksmith needs in New Jersey. Available 24/7 for emergency services.";
+---
+
+<Layout title={title} description={description}>
+  <section class="bg-brand-primary text-white py-8 md:py-12">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-center">Contact Us</h1>
+      <p class="mt-2 text-center max-w-2xl mx-auto">Have questions or need a locksmith? We're here to help.</p>
+    </div>
+  </section>
+  
+  <section class="py-8 md:py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+        <-f Contact Info Card - Stacks on mobile -->
+        <div class="bg-white p-6 md:p-8 rounded-lg shadow-md order-2 lg:order-1">
+          <h2 class="text-2xl font-bold text-brand-primary mb-6">Contact Information</h2>
+          
+          <div class="space-y-6">
+            <-f Phone -->
+            <div class="flex">
+              <div class="flex-shrink-0 w-12 h-12 bg-brand-secondary rounded-full flex items-center justify-center text-white mr-4">
+                <span class="text-xl">📞</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Phone</h3>
+                <a href="tel:5513057525" class="text-lg font-semibold text-brand-secondary hover:underline">
+                  (551) 305-7525
+                </a>
+                <p class="text-sm text-gray-600 mt-1">Available 24/7 for emergencies</p>
+              </div>
+            </div>
+            
+            <-f Email -->
+            <div class="flex">
+              <div class="flex-shrink-0 w-12 h-12 bg-brand-secondary rounded-full flex items-center justify-center text-white mr-4">
+                <span class="text-xl">✉️</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Email</h3>
+                <a href="mailto:support@njexpresslocksmith.com" class="text-brand-secondary hover:underline">
+                  support@njexpresslocksmith.com
+                </a>
+                <p class="text-sm text-gray-600 mt-1">We'll respond as soon as possible</p>
+              </div>
+            </div>
+            
+            <-f License Info -->
+            <div class="flex">
+              <div class="flex-shrink-0 w-12 h-12 bg-brand-secondary rounded-full flex items-center justify-center text-white mr-4">
+                <span class="text-xl">🔐</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">License</h3>
+                <p>NJ License Number: <strong>13VH13592800</strong></p>
+              </div>
+            </div>
+          </div>
+          
+          <-f Service Area Preview -->
+          <div class="mt-8">
+            <h3 class="text-xl font-bold mb-3">Service Areas</h3>
+            <p class="mb-2">We serve the following areas in New Jersey:</p>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="bg-brand-neutral-light px-3 py-1 rounded-full">Hackensack</span>
+              <span class="bg-brand-neutral-light px-3 py-1 rounded-full">Teaneck</span>
+              <span class="bg-brand-neutral-light px-3 py-1 rounded-full">Fort Lee</span>
+              <span class="bg-brand-neutral-light px-3 py-1 rounded-full">North Bergen</span>
+              <span class="bg-brand-neutral-light px-3 py-1 rounded-full">Cliffside Park</span>
+              <a href="/service-areas" class="text-brand-secondary hover:underline px-3 py-1">View All →</a>
+            </div>
+          </div>
+        </div>
+        
+        <-f Contact Form Card - Stacks on mobile -->
+        <div class="bg-white p-6 md:p-8 rounded-lg shadow-md order-1 lg:order-2">
+          <h2 class="text-2xl font-bold text-brand-primary mb-6">Send Us a Message</h2>
+          <ContactForm />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <-f Map Placeholder - Full Width -->
+  <section class="py-8 md:py-12 bg-brand-neutral-light">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-brand-primary text-center mb-6">Our Service Area</h2>
+      <div class="bg-white rounded-lg shadow-md aspect-video min-h-[300px] flex items-center justify-center">
+        <p>Google Maps Integration Coming Soon</p>
+      </div>
+    </div>
+  </section>
+  
+  <-f Call-to-Action Section -->
+  <section class="py-8 md:py-12 bg-brand-primary text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Need Emergency Locksmith Service?</h2>
+      <p class="text-lg mb-6 max-w-2xl mx-auto">We're available 24/7 for all your locksmith needs.</p>
+      <a href="tel:5513057525" class="inline-flex items-center justify-center bg-brand-accent text-brand-neutral-dark font-bold px-6 py-3 rounded-md hover:bg-yellow-400 transition-colors text-lg">
+        <span class="mr-2">📞</span> Call Now: (551) 305-7525
+      </a>
+    </div>
+  </section>
+</Layout>

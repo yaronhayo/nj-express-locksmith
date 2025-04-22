@@ -1,0 +1,107 @@
+---
+// Form component for contact page
+---
+
+<form
+  class="w-full"
+  method="POST"
+  name="contact"
+  netlify-honeypot="bot-field"
+  data-netlify="true"
+>
+  <input type="hidden" name="form-name" value="contact" />
+  <div class="hidden">
+    <label>
+      Don't fill this out if you're human: <input name="bot-field" />
+    </label>
+  </div>
+
+  <div class="space-y-4">
+    <-f Name field -->
+    <div>
+      <label for="name" class="block text-sm font-medium text-brand-neutral-dark mb-1">
+        Full Name <span class="text-red-600">*</span>
+      </label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-secondary focus:border-transparent"
+        placeholder="Your name"
+      />
+    </div>
+
+    <-f Email field -->
+    <div>
+      <label for="email" class="block text-sm font-medium text-brand-neutral-dark mb-1">
+        Email Address <span class="text-red-600">*</span>
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-secondary focus:border-transparent"
+        placeholder="your@email.com"
+      />
+    </div>
+
+    <-f Phone field -->
+    <div>
+      <label for="phone" class="block text-sm font-medium text-brand-neutral-dark mb-1">
+        Phone Number <span class="text-red-600">*</span>
+      </label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        required
+        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-secondary focus:border-transparent"
+        placeholder="(123) 456-7890"
+      />
+    </div>
+
+    <-f Subject dropdown -->
+    <div>
+      <label for="subject" class="block text-sm font-medium text-brand-neutral-dark mb-1">
+        Subject
+      </label>
+      <select
+        id="subject"
+        name="subject"
+        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-secondary focus:border-transparent"
+      >
+        <option value="service-inquiry">Service Inquiry</option>
+        <option value="emergency">Emergency Service</option>
+        <option value="quote">Request a Quote</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <-f Message field -->
+    <div>
+      <label for="message" class="block text-sm font-medium text-brand-neutral-dark mb-1">
+        Message <span class="text-red-600">*</span>
+      </label>
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        required
+        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-secondary focus:border-transparent"
+        placeholder="How can we help you?"
+      ></textarea>
+    </div>
+
+    <-f Submit button - large and full-width on mobile -->
+    <div>
+      <button
+        type="submit"
+        class="w-full bg-brand-secondary text-white font-medium px-6 py-3 rounded-md hover:bg-teal-600 transition-colors"
+      >
+        Send Message
+      </button>
+    </div>
+  </div>
+</form>
